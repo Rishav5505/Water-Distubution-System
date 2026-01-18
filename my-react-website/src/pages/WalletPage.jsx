@@ -44,7 +44,7 @@ const WalletPage = () => {
         const config = { headers: { Authorization: `Bearer ${user.token}` } };
 
         try {
-            await axios.post('http://localhost:5000/api/features/wallet/topup', { amount }, config);
+            await axios.post('https://water-distubution-system.onrender.com/api/features/wallet/topup', { amount }, config);
             toast.success(`Success! Added ₹${amount} to wallet.`);
             setShowTopupModal(false);
             fetchWalletData();

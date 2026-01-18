@@ -10,8 +10,8 @@ const ChatBox = ({ currentUser, receiverId, receiverName, onClose }) => {
     const [socket, setSocket] = useState(null);
     const scrollRef = useRef();
 
-    const API_URL = 'http://localhost:5000/api';
-    const SOCKET_URL = 'http://localhost:5000';
+    const API_URL = 'https://water-distubution-system.onrender.com/api';
+    const SOCKET_URL = 'https://water-distubution-system.onrender.com';
 
     useEffect(() => {
         const newSocket = io(SOCKET_URL, {
@@ -100,8 +100,8 @@ const ChatBox = ({ currentUser, receiverId, receiverName, onClose }) => {
                         >
                             <div
                                 className={`max-w-[80%] p-3 rounded-2xl text-sm ${msg.sender === currentUser._id || msg.sender._id === currentUser._id
-                                        ? 'bg-sky-500 text-white rounded-tr-none shadow-lg shadow-sky-500/20'
-                                        : 'bg-white/10 text-slate-200 rounded-tl-none border border-white/5'
+                                    ? 'bg-sky-500 text-white rounded-tr-none shadow-lg shadow-sky-500/20'
+                                    : 'bg-white/10 text-slate-200 rounded-tl-none border border-white/5'
                                     }`}
                             >
                                 {msg.content}

@@ -72,7 +72,7 @@ const UserDashboard = () => {
     const [activeChat, setActiveChat] = useState(null); // { id, name }
 
 
-    const API_URL = 'http://localhost:5000/api';
+    const API_URL = 'https://water-distubution-system.onrender.com/api';
     const config = { headers: { Authorization: `Bearer ${user?.token}` } };
 
     // Vacation Mode State

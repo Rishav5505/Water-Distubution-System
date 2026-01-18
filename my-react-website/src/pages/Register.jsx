@@ -26,7 +26,7 @@ const Register = () => {
     const { register, verifyOTP, resendOTP } = useAuth();
     const navigate = useNavigate();
 
-    const API_URL = 'http://localhost:5000/api';
+    const API_URL = 'https://water-distubution-system.onrender.com/api';
 
     useEffect(() => {
         const fetchSocieties = async () => {

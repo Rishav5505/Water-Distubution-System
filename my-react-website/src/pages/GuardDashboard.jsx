@@ -12,13 +12,13 @@ const GuardDashboard = () => {
     const [bottlesOut, setBottlesOut] = useState(0);
     const [loading, setLoading] = useState(false);
 
-    const API_URL = 'http://localhost:5000/api/enterprise';
+    const API_URL = 'https://water-distubution-system.onrender.com/api/enterprise';
     const config = { headers: { Authorization: `Bearer ${user.token}` } };
 
     const handleSearch = async () => {
         setLoading(true);
         try {
-            const res = await axios.get(`http://localhost:5000/api/admin/orders/${searchId}`, config);
+            const res = await axios.get(`https://water-distubution-system.onrender.com/api/admin/orders/${searchId}`, config);
             setScannedOrder(res.data);
             setBottlesOut(res.data.quantity); // Default assuming they return same amount
             setLoading(false);

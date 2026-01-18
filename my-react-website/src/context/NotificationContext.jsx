@@ -15,6 +15,8 @@ export const useNotifications = () => {
 
 export const NotificationProvider = ({ children }) => {
     const { user } = useAuth();
+    const API_URL = 'https://water-distubution-system.onrender.com/api';
+    const SOCKET_URL = 'https://water-distubution-system.onrender.com';
     const [socket, setSocket] = useState(null);
     const [notifications, setNotifications] = useState([]);
     const [unreadCount, setUnreadCount] = useState(0);
@@ -26,7 +28,7 @@ export const NotificationProvider = ({ children }) => {
             return;
         }
 
-        const newSocket = io('http://localhost:5000', {
+        const newSocket = io(SOCKET_URL, {
             auth: {
                 token: user.token,
             },
