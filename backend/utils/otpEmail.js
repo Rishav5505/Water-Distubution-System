@@ -39,6 +39,10 @@ const sendOTPEmail = async (email, otp, name) => {
     };
 
     try {
+        console.log(`\n----------------------------`);
+        console.log(`🔑 DEBUG OTP for ${email}: ${otp}`);
+        console.log(`----------------------------\n`);
+
         const response = await axios.post('https://api.brevo.com/v3/smtp/email', data, {
             headers: {
                 'api-key': BREVO_API_KEY,
