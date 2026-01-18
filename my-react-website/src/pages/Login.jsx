@@ -39,21 +39,21 @@ const Login = () => {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
-                className="glass-card w-full max-w-[460px] relative overflow-hidden group"
+                className="glass-card w-full max-w-[460px] relative overflow-hidden group p-6 md:p-8"
             >
                 <div className="absolute top-0 left-0 w-full h-[4px] bg-gradient-to-r from-transparent via-sky-500 to-transparent opacity-50"></div>
 
-                <div className="flex flex-col items-center mb-10">
+                <div className="flex flex-col items-center mb-8 md:mb-10 text-center">
                     <motion.div
                         initial={{ y: -20 }}
                         animate={{ y: 0 }}
-                        className="w-20 h-20 water-gradient rounded-[2rem] flex items-center justify-center shadow-2xl shadow-sky-500/40 mb-6 relative group-hover:scale-110 transition-transform duration-500"
+                        className="w-16 h-16 md:w-20 md:h-20 water-gradient rounded-2xl md:rounded-[2rem] flex items-center justify-center shadow-2xl shadow-sky-500/40 mb-4 md:mb-6 relative group-hover:scale-110 transition-transform duration-500"
                     >
-                        <Droplet className="text-white fill-white" size={40} />
-                        <div className="absolute inset-0 bg-white/20 rounded-[2rem] animate-pulse"></div>
+                        <Droplet className="text-white fill-white" size={32} />
+                        <div className="absolute inset-0 bg-white/20 rounded-2xl md:rounded-[2rem] animate-pulse"></div>
                     </motion.div>
-                    <h1 className="text-4xl font-extrabold text-white tracking-tight mb-2">Welcome Back</h1>
-                    <p className="text-slate-400 font-medium">Please enter your credentials to continue</p>
+                    <h1 className="text-2xl md:text-4xl font-extrabold text-white tracking-tight mb-2">Welcome Back</h1>
+                    <p className="text-xs md:text-sm text-slate-400 font-medium">Please enter your credentials to continue</p>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-6">

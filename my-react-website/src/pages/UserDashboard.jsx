@@ -461,7 +461,7 @@ const UserDashboard = () => {
                 )}
             </AnimatePresence>
 
-            <div className="max-w-7xl mx-auto px-6 py-10 space-y-8">
+            <div className="max-w-7xl mx-auto px-4 md:px-6 py-6 md:py-10 space-y-6 md:space-y-8">
                 {usageAlert && (
                     <motion.div
                         initial={{ height: 0, opacity: 0 }}
@@ -478,13 +478,13 @@ const UserDashboard = () => {
                 {/* Header with Notifications */}
                 <header className="flex flex-col md:flex-row md:items-center justify-between gap-6">
                     <div className="flex items-center gap-4">
-                        <div className="w-16 h-16 water-gradient rounded-2xl flex items-center justify-center shadow-xl shadow-sky-500/20">
-                            <Droplet className="text-white fill-white" size={32} />
+                        <div className="w-12 h-12 md:w-16 md:h-16 water-gradient rounded-xl md:rounded-2xl flex items-center justify-center shadow-xl shadow-sky-500/20">
+                            <Droplet className="text-white fill-white" size={24} />
                         </div>
                         <div>
-                            <h1 className="text-3xl font-bold text-white tracking-tight">Welcome, {user.name}</h1>
-                            <p className="text-slate-400 flex items-center gap-2">
-                                <MapPin size={16} /> Tower {user.towerNumber} • Flat {user.flatNumber}
+                            <h1 className="text-xl md:text-3xl font-bold text-white tracking-tight leading-tight">Welcome, {user.name}</h1>
+                            <p className="text-[10px] md:text-sm text-slate-400 flex items-center gap-2">
+                                <MapPin size={12} /> Tower {user.towerNumber} • Flat {user.flatNumber}
                             </p>
                         </div>
                     </div>
@@ -560,25 +560,26 @@ const UserDashboard = () => {
                 </header>
 
                 {/* Navigation Tabs */}
-                <div className="flex flex-wrap p-1 bg-white/5 rounded-xl w-fit gap-1">
-                    {[
-                        { id: 'orders', label: 'Orders', icon: ShoppingCart },
-                        { id: 'scheduled', label: 'Scheduled', icon: CalendarPlus },
-                        { id: 'messages', label: 'Messages', icon: MessageSquare },
-                        { id: 'returns', label: 'Returns', icon: Recycle },
-                        { id: 'complaints', label: 'Complaints', icon: AlertCircle },
-                        { id: 'analytics', label: 'Analytics', icon: BarChart3 },
-                        { id: 'wallet', label: 'Wallet', icon: Wallet }
-                    ].map(tab => (
-                        <button
-                            key={tab.id}
-                            onClick={() => setActiveTab(tab.id)}
-                            className={`flex items-center gap-2 px-4 py-2.5 rounded-lg text-xs font-bold transition-all ${activeTab === tab.id ? 'bg-sky-500 text-white shadow-lg' : 'text-slate-400 hover:text-white hover:bg-white/5'}`}
-                        >
-
-                            <tab.icon size={16} /> {tab.label}
-                        </button>
-                    ))}
+                <div className="flex overflow-x-auto pb-2 -mx-4 px-4 md:mx-0 md:px-0 scrollbar-hide">
+                    <div className="flex p-1 bg-white/5 rounded-xl w-fit gap-1 whitespace-nowrap">
+                        {[
+                            { id: 'orders', label: 'Orders', icon: ShoppingCart },
+                            { id: 'scheduled', label: 'Scheduled', icon: CalendarPlus },
+                            { id: 'messages', label: 'Messages', icon: MessageSquare },
+                            { id: 'returns', label: 'Returns', icon: Recycle },
+                            { id: 'complaints', label: 'Complaints', icon: AlertCircle },
+                            { id: 'analytics', label: 'Analytics', icon: BarChart3 },
+                            { id: 'wallet', label: 'Wallet', icon: Wallet }
+                        ].map(tab => (
+                            <button
+                                key={tab.id}
+                                onClick={() => setActiveTab(tab.id)}
+                                className={`flex items-center gap-2 px-3 md:px-4 py-2 md:py-2.5 rounded-lg text-[10px] md:text-xs font-bold transition-all ${activeTab === tab.id ? 'bg-sky-500 text-white shadow-lg' : 'text-slate-400 hover:text-white hover:bg-white/5'}`}
+                            >
+                                <tab.icon size={14} /> {tab.label}
+                            </button>
+                        ))}
+                    </div>
                 </div>
 
                 {/* Referral & Loyalty Points Banner */}

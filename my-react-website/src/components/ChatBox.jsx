@@ -67,7 +67,7 @@ const ChatBox = ({ currentUser, receiverId, receiverName, onClose }) => {
             initial={{ opacity: 0, y: 100, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 100, scale: 0.9 }}
-            className="fixed bottom-6 right-6 w-80 md:w-96 h-[500px] glass-card shadow-2xl z-[100] flex flex-col overflow-hidden border-sky-500/20"
+            className="fixed bottom-0 md:bottom-6 right-0 md:right-6 w-full md:w-96 h-full md:h-[500px] md:glass-card bg-slate-950 md:bg-transparent shadow-2xl z-[1001] flex flex-col md:overflow-hidden md:border-sky-500/20 md:rounded-[2rem]"
         >
             {/* Header */}
             <div className="p-4 bg-sky-500 flex items-center justify-between text-white">

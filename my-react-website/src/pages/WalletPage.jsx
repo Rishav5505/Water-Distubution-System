@@ -67,7 +67,7 @@ const WalletPage = () => {
         if (!user?.token) return;
         try {
             const config = { headers: { Authorization: `Bearer ${user.token}` } };
-            const { data } = await axios.get('http://localhost:5000/api/wallet', config);
+            const { data } = await axios.get('https://water-distubution-system.onrender.com/api/wallet', config);
             if (data.success) {
                 setWallet(data.wallet);
             }
@@ -80,7 +80,7 @@ const WalletPage = () => {
         if (!user?.token) return;
         try {
             const config = { headers: { Authorization: `Bearer ${user.token}` } };
-            const { data } = await axios.get('http://localhost:5000/api/wallet/transactions', config);
+            const { data } = await axios.get('https://water-distubution-system.onrender.com/api/wallet/transactions', config);
             if (data.success) {
                 setTransactions(data.transactions);
             }
@@ -95,7 +95,7 @@ const WalletPage = () => {
         if (!user?.token) return;
         try {
             const config = { headers: { Authorization: `Bearer ${user.token}` } };
-            const { data } = await axios.get('http://localhost:5000/api/wallet/plans', config);
+            const { data } = await axios.get('https://water-distubution-system.onrender.com/api/wallet/plans', config);
             if (data.success) {
                 setPrepaidPlans(data.plans);
             }
@@ -200,17 +200,17 @@ const WalletPage = () => {
     }
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-sky-50 p-6">
+        <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-sky-50 px-4 md:px-6 py-6 md:py-10">
             {/* Load Razorpay Script */}
             <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
             {/* Header */}
-            <div className="max-w-7xl mx-auto mb-8">
-                <h1 className="text-4xl font-bold text-slate-800 flex items-center gap-3">
-                    <WalletIcon className="text-sky-500" size={40} />
+            <div className="max-w-7xl mx-auto mb-6 md:mb-8 text-center md:text-left">
+                <h1 className="text-3xl md:text-4xl font-bold text-slate-800 flex items-center justify-center md:justify-start gap-3">
+                    <WalletIcon className="text-sky-500" size={32} md:size={40} />
                     My Wallet
                 </h1>
-                <p className="text-slate-600 mt-2">Manage your digital wallet & transactions</p>
+                <p className="text-sm md:text-slate-600 mt-2">Manage your digital wallet & transactions</p>
             </div>
 
             {/* Wallet Balance Card */}
@@ -228,18 +228,18 @@ const WalletPage = () => {
                         <WalletIcon size={60} className="opacity-20" />
                     </div>
 
-                    <div className="grid grid-cols-3 gap-4 mb-6">
-                        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
-                            <p className="text-sky-100 text-xs mb-1">Total Credited</p>
-                            <p className="text-xl font-semibold">₹{wallet?.totalCredited || 0}</p>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 mb-6">
+                        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 md:p-4">
+                            <p className="text-sky-100 text-[10px] md:text-xs mb-1">Total Credited</p>
+                            <p className="text-lg md:text-xl font-semibold">₹{wallet?.totalCredited || 0}</p>
                         </div>
-                        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
-                            <p className="text-sky-100 text-xs mb-1">Total Spent</p>
-                            <p className="text-xl font-semibold">₹{wallet?.totalDebited || 0}</p>
+                        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 md:p-4">
+                            <p className="text-sky-100 text-[10px] md:text-xs mb-1">Total Spent</p>
+                            <p className="text-lg md:text-xl font-semibold">₹{wallet?.totalDebited || 0}</p>
                         </div>
-                        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4">
-                            <p className="text-sky-100 text-xs mb-1">Cashback Earned</p>
-                            <p className="text-xl font-semibold flex items-center gap-1">
+                        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 md:p-4">
+                            <p className="text-sky-100 text-[10px] md:text-xs mb-1">Cashback Earned</p>
+                            <p className="text-lg md:text-xl font-semibold flex items-center gap-1">
                                 <Gift size={16} />
                                 ₹{wallet?.totalCashback || 0}
                             </p>

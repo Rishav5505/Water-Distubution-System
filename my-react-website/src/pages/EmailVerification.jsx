@@ -54,15 +54,15 @@ const EmailVerification = () => {
             <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="glass-card w-full max-w-md p-10 flex flex-col items-center"
+                className="glass-card w-full max-w-md p-6 md:p-10 flex flex-col items-center"
             >
-                <div className="w-20 h-20 bg-sky-500/10 rounded-3xl flex items-center justify-center mb-8 border border-sky-500/20">
-                    <KeyRound className="text-sky-400" size={40} />
+                <div className="w-16 h-16 md:w-20 md:h-20 bg-sky-500/10 rounded-2xl md:rounded-3xl flex items-center justify-center mb-6 md:mb-8 border border-sky-500/20">
+                    <KeyRound className="text-sky-400" size={32} md:size={40} />
                 </div>
 
-                <h2 className="text-3xl font-black text-white mb-2 text-center">Verify Identity</h2>
-                <p className="text-slate-400 text-center mb-10 text-sm">
-                    Enter the verification code sent to <br />
+                <h2 className="text-2xl md:text-3xl font-black text-white mb-2 text-center leading-tight">Verify Identity</h2>
+                <p className="text-slate-400 text-center mb-8 md:mb-10 text-xs md:text-sm">
+                    Enter the verification code sent to <br className="hidden md:block" />
                     <span className="text-sky-400 font-bold">{email}</span>
                 </p>
 
@@ -73,7 +73,7 @@ const EmailVerification = () => {
                             type="text"
                             maxLength={6}
                             placeholder="0 0 0 0 0 0"
-                            className="input-field text-center text-4xl tracking-[0.5em] font-black h-20"
+                            className="input-field text-center text-2xl md:text-4xl tracking-[0.3em] md:tracking-[0.5em] font-black h-16 md:h-20"
                             value={otp}
                             onChange={(e) => setOtp(e.target.value.replace(/\D/g, ''))}
                             required

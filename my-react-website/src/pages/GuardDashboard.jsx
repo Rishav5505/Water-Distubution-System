@@ -44,30 +44,30 @@ const GuardDashboard = () => {
     };
 
     return (
-        <div className="max-w-4xl mx-auto px-6 py-10 space-y-8">
-            <header className="flex items-center gap-4 bg-slate-900/50 p-6 rounded-3xl border border-white/5">
-                <div className="w-14 h-14 bg-emerald-500/20 rounded-2xl flex items-center justify-center text-emerald-400">
-                    <ShieldCheck size={32} />
+        <div className="max-w-4xl mx-auto px-4 md:px-6 py-6 md:py-10 space-y-6 md:space-y-8">
+            <header className="flex items-center gap-4 bg-slate-900/50 p-4 md:p-6 rounded-2xl md:rounded-3xl border border-white/5">
+                <div className="w-12 h-12 md:w-14 md:h-14 bg-emerald-500/20 rounded-xl md:rounded-2xl flex items-center justify-center text-emerald-400">
+                    <ShieldCheck size={28} md:size={32} />
                 </div>
                 <div>
-                    <h1 className="text-2xl font-black text-white">Security Gate Pass</h1>
-                    <p className="text-sm text-slate-400 uppercase tracking-widest font-bold">Society: {user.societyName || 'JalConnect Prime'}</p>
+                    <h1 className="text-xl md:text-2xl font-black text-white">Security Gate Pass</h1>
+                    <p className="text-[10px] md:text-sm text-slate-400 uppercase tracking-widest font-bold leading-tight">Society: {user.societyName || 'JalConnect Prime'}</p>
                 </div>
             </header>
 
             <div className="glass-card">
                 <div className="relative mb-6">
-                    <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500" size={20} />
+                    <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500" size={18} md:size={20} />
                     <input
                         type="text"
-                        placeholder="Scan Order ID or Token..."
-                        className="input-field pl-12 pr-32"
+                        placeholder="Scan Order ID..."
+                        className="input-field pl-12 pr-28 md:pr-32 text-sm md:text-base"
                         value={searchId}
                         onChange={(e) => setSearchId(e.target.value)}
                     />
                     <button
                         onClick={handleSearch}
-                        className="absolute right-2 top-1/2 -translate-y-1/2 bg-sky-500 text-white px-6 py-2 rounded-xl text-xs font-bold uppercase tracking-widest hover:bg-sky-400 transition-all"
+                        className="absolute right-2 top-1/2 -translate-y-1/2 bg-sky-500 text-white px-4 md:px-6 py-2 rounded-lg md:rounded-xl text-[10px] md:text-xs font-bold uppercase tracking-widest hover:bg-sky-400 transition-all"
                     >
                         Check
                     </button>

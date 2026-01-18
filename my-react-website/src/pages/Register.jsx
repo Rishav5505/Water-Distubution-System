@@ -108,16 +108,16 @@ const Register = () => {
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="glass-card w-full max-w-2xl relative"
+                className="glass-card w-full max-w-2xl relative p-6 md:p-8"
             >
                 {!showOTP ? (
                     <>
-                        <div className="flex flex-col items-center mb-12">
-                            <div className="w-20 h-20 water-gradient rounded-[2.5rem] flex items-center justify-center shadow-2xl shadow-sky-500/30 mb-6 group cursor-pointer">
-                                <Droplet className="text-white fill-white group-hover:scale-110 transition-transform duration-500" size={36} />
+                        <div className="flex flex-col items-center mb-8 md:mb-12 text-center">
+                            <div className="w-16 h-16 md:w-20 md:h-20 water-gradient rounded-3xl md:rounded-[2.5rem] flex items-center justify-center shadow-2xl shadow-sky-500/30 mb-4 md:mb-6 group cursor-pointer shrink-0">
+                                <Droplet className="text-white fill-white group-hover:scale-110 transition-transform duration-500" size={30} />
                             </div>
-                            <h1 className="text-4xl font-extrabold text-white tracking-tight mb-3 text-center leading-tight">Create your account</h1>
-                            <p className="text-slate-400 font-medium text-center max-w-md">Join the smarter way of managing water delivery for your flat</p>
+                            <h1 className="text-2xl md:text-4xl font-extrabold text-white tracking-tight mb-2 md:mb-3 leading-tight">Create your account</h1>
+                            <p className="text-xs md:text-sm text-slate-400 font-medium max-w-md">Join the smarter way of managing water delivery for your flat</p>
                         </div>
 
                         <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-8">

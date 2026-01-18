@@ -55,24 +55,26 @@ const AdminDashboard = () => {
     if (loading) return <div className="p-10 text-center text-sky-400 animate-pulse font-black text-2xl uppercase tracking-widest">JalConnect Core Admin Loading...</div>;
 
     return (
-        <div className="max-w-7xl mx-auto px-6 py-10 space-y-10">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 py-6 md:py-10 space-y-6 md:space-y-10">
             {/* Header */}
             <header className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
                 <div>
-                    <h1 className="text-4xl font-black text-white tracking-tight">Platform Intelligence</h1>
-                    <p className="text-slate-400 font-medium">Monitoring society water infrastructure & fiscal performance</p>
+                    <h1 className="text-2xl md:text-4xl font-black text-white tracking-tight leading-tight">Platform Intelligence</h1>
+                    <p className="text-xs md:text-sm text-slate-400 font-medium">Monitoring society water infrastructure & fiscal performance</p>
                 </div>
                 <div className="flex gap-4">
-                    <div className="glass p-1 rounded-xl flex">
-                        {['overview', 'vendors', 'residents', 'reports'].map(tab => (
-                            <button
-                                key={tab}
-                                onClick={() => setActiveTab(tab)}
-                                className={`px-6 py-2 rounded-lg text-xs font-black uppercase tracking-widest transition-all ${activeTab === tab ? 'bg-sky-500 text-white shadow-xl' : 'text-slate-400 hover:text-white'}`}
-                            >
-                                {tab}
-                            </button>
-                        ))}
+                    <div className="flex overflow-x-auto pb-2 -mx-4 px-4 md:mx-0 md:px-0 scrollbar-hide">
+                        <div className="glass p-1 rounded-xl flex whitespace-nowrap">
+                            {['overview', 'vendors', 'residents', 'reports'].map(tab => (
+                                <button
+                                    key={tab}
+                                    onClick={() => setActiveTab(tab)}
+                                    className={`px-4 md:px-6 py-2 rounded-lg text-[10px] md:text-xs font-black uppercase tracking-widest transition-all ${activeTab === tab ? 'bg-sky-500 text-white shadow-xl' : 'text-slate-400 hover:text-white'}`}
+                                >
+                                    {tab}
+                                </button>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </header>

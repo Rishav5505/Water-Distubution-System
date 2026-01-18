@@ -15,7 +15,7 @@ export const BottleReturnModal = ({ show, onClose, onSubmit, orders }) => (
                     initial={{ scale: 0.9, y: 20 }}
                     animate={{ scale: 1, y: 0 }}
                     exit={{ scale: 0.9, y: 20 }}
-                    className="glass-card max-w-md w-full"
+                    className="glass-card max-w-md w-full p-6 md:p-8"
                     onClick={(e) => e.stopPropagation()}
                 >
                     <div className="flex items-center justify-between mb-6">
@@ -91,7 +91,7 @@ export const ScheduleOrderModal = ({ show, onClose, onSubmit, vendors }) => (
                     initial={{ scale: 0.9, y: 20 }}
                     animate={{ scale: 1, y: 0 }}
                     exit={{ scale: 0.9, y: 20 }}
-                    className="glass-card max-w-md w-full max-h-[90vh] overflow-y-auto"
+                    className="glass-card max-w-md w-full max-h-[90vh] overflow-y-auto p-6 md:p-8"
                     onClick={(e) => e.stopPropagation()}
                 >
                     <div className="flex items-center justify-between mb-6">
@@ -199,7 +199,7 @@ export const ComplaintModal = ({ show, onClose, onSubmit, vendors, orders }) => 
                     initial={{ scale: 0.9, y: 20 }}
                     animate={{ scale: 1, y: 0 }}
                     exit={{ scale: 0.9, y: 20 }}
-                    className="glass-card max-w-md w-full"
+                    className="glass-card max-w-md w-full p-6 md:p-8"
                     onClick={(e) => e.stopPropagation()}
                 >
                     <div className="flex items-center justify-between mb-6">

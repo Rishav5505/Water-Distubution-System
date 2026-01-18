@@ -11,6 +11,7 @@ import AdminDashboard from './pages/AdminDashboard';
 import GuardDashboard from './pages/GuardDashboard';
 import WalletPage from './pages/WalletPage';
 import EmailVerification from './pages/EmailVerification';
+import InstallApp from './components/InstallApp';
 
 const ProtectedRoute = ({ children, role }) => {
   const { user, loading } = useAuth();
@@ -47,6 +48,7 @@ function App() {
               }
             }} />
             <Navbar />
+            <InstallApp />
             <main>
               <Routes>
                 <Route path="/" element={<DashboardRedirect />} />

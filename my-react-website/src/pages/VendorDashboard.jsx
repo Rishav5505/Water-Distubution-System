@@ -105,33 +105,31 @@ const VendorDashboard = () => {
     );
 
     return (
-        <div className="max-w-7xl mx-auto px-6 py-10 space-y-10">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 py-6 md:py-10 space-y-6 md:space-y-10">
             {/* Header with Society Selector */}
-            <header className="flex flex-col lg:flex-row lg:items-center justify-between gap-8 bg-white/5 p-8 rounded-3xl border border-white/10 shadow-2xl relative overflow-hidden">
-                {/* Abstract Background Decoration */}
+            <header className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 md:gap-8 bg-white/5 p-5 md:p-8 rounded-2xl md:rounded-3xl border border-white/10 shadow-2xl relative overflow-hidden">
                 <div className="absolute -top-20 -right-20 w-64 h-64 bg-sky-500/10 blur-[100px] rounded-full"></div>
 
-                <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center gap-6">
-                    <div className="w-20 h-20 glass rounded-3xl flex items-center justify-center border-white/20 shadow-xl overflow-hidden">
+                <div className="relative z-10 flex flex-col md:flex-row items-center md:items-start md:items-center gap-4 md:gap-6 text-center md:text-left">
+                    <div className="w-16 h-16 md:w-20 md:h-20 glass rounded-2xl md:rounded-3xl flex items-center justify-center border-white/20 shadow-xl overflow-hidden shrink-0">
                         <div className="w-full h-full water-gradient flex items-center justify-center">
-                            <Users className="text-white" size={32} />
+                            <Users className="text-white" size={28} />
                         </div>
                     </div>
                     <div>
-                        <div className="flex items-center gap-3 mb-1">
-                            <h1 className="text-4xl font-black text-white">{vendorProfile.vendorName}</h1>
-                            <div className={`px-4 py-1 rounded-full text-[10px] font-black uppercase tracking-[0.2em] shadow-lg ${vendorProfile.isActive ? 'bg-emerald-500 shadow-emerald-500/20 text-white' : 'bg-rose-500 shadow-rose-500/20 text-white'}`}>
+                        <div className="flex flex-col md:flex-row items-center gap-2 md:gap-3 mb-1">
+                            <h1 className="text-2xl md:text-4xl font-black text-white leading-tight">{vendorProfile.vendorName}</h1>
+                            <div className={`px-4 py-1 rounded-full text-[9px] md:text-[10px] font-black uppercase tracking-[0.2em] shadow-lg ${vendorProfile.isActive ? 'bg-emerald-500 shadow-emerald-500/20 text-white' : 'bg-rose-500 shadow-rose-500/20 text-white'}`}>
                                 {vendorProfile.isActive ? 'Online' : 'Offline'}
                             </div>
                         </div>
 
-                        {/* Society Selector */}
-                        <div className="flex items-center gap-3 mt-2">
-                            <MapPin size={18} className="text-sky-400" />
+                        <div className="flex items-center justify-center md:justify-start gap-2 md:gap-3 mt-2">
+                            <MapPin size={16} className="text-sky-400" />
                             <select
                                 value={selectedSociety}
                                 onChange={(e) => setSelectedSociety(e.target.value)}
-                                className="bg-slate-900 border border-white/10 text-white text-sm rounded-lg focus:ring-sky-500 focus:border-sky-500 block p-2"
+                                className="bg-slate-900 border border-white/10 text-white text-xs md:text-sm rounded-lg p-2 outline-none focus:border-sky-500 transition-colors"
                             >
                                 <option value="">All Societies</option>
                                 {vendorProfile.societies && vendorProfile.societies.map(soc => (
@@ -142,12 +140,12 @@ const VendorDashboard = () => {
                     </div>
                 </div>
 
-                <div className="flex flex-wrap gap-4 relative z-10">
+                <div className="flex justify-center md:justify-end gap-3 md:gap-4 relative z-10">
                     <button
                         onClick={toggleStatus}
-                        className={`flex items-center gap-2 px-8 py-4 rounded-2xl font-black uppercase tracking-widest transition-all text-sm border-2 ${vendorProfile.isActive ? 'bg-rose-500/10 text-rose-500 border-rose-500/20 hover:bg-rose-500 hover:text-white' : 'bg-emerald-500/10 text-emerald-500 border-emerald-500/20 hover:bg-emerald-500 hover:text-white'}`}
+                        className={`flex items-center gap-2 px-6 md:px-8 py-3 md:py-4 rounded-xl md:rounded-2xl font-black uppercase tracking-widest transition-all text-[10px] md:text-sm border-2 ${vendorProfile.isActive ? 'bg-rose-500/10 text-rose-500 border-rose-500/20 hover:bg-rose-500 hover:text-white' : 'bg-emerald-500/10 text-emerald-500 border-emerald-500/20 hover:bg-emerald-500 hover:text-white'}`}
                     >
-                        <Power size={20} />
+                        <Power size={18} />
                         {vendorProfile.isActive ? 'Go Offline' : 'Go Online'}
                     </button>
                 </div>
@@ -186,25 +184,27 @@ const VendorDashboard = () => {
                     <h2 className="text-3xl font-black text-white flex items-center gap-3">
                         <Navigation className="text-sky-400" size={32} /> Delivery Routes
                     </h2>
-                    <div className="flex bg-white/5 p-1 rounded-xl">
-                        <button
-                            onClick={() => setViewMode('route')}
-                            className={`flex items-center gap-2 px-6 py-2 rounded-lg text-sm font-bold transition-all ${viewMode === 'route' ? 'bg-sky-500 text-white shadow-lg shadow-sky-500/30' : 'text-slate-400'}`}
-                        >
-                            <Navigation size={18} /> Optimized Route
-                        </button>
-                        <button
-                            onClick={() => setViewMode('list')}
-                            className={`flex items-center gap-2 px-6 py-2 rounded-lg text-sm font-bold transition-all ${viewMode === 'list' ? 'bg-sky-500 text-white shadow-lg shadow-sky-500/30' : 'text-slate-400'}`}
-                        >
-                            <ListOrdered size={18} /> Flat Wise
-                        </button>
-                        <button
-                            onClick={() => setViewMode('customers')}
-                            className={`flex items-center gap-2 px-6 py-2 rounded-lg text-sm font-bold transition-all ${viewMode === 'customers' ? 'bg-sky-500 text-white shadow-lg shadow-sky-500/30' : 'text-slate-400'}`}
-                        >
-                            <Users size={18} /> All Users
-                        </button>
+                    <div className="flex overflow-x-auto pb-2 -mx-4 px-4 md:mx-0 md:px-0 scrollbar-hide">
+                        <div className="flex bg-white/5 p-1 rounded-xl whitespace-nowrap">
+                            <button
+                                onClick={() => setViewMode('route')}
+                                className={`flex items-center gap-2 px-4 md:px-6 py-2 rounded-lg text-xs md:text-sm font-bold transition-all ${viewMode === 'route' ? 'bg-sky-500 text-white shadow-lg shadow-sky-500/30' : 'text-slate-400'}`}
+                            >
+                                <Navigation size={16} md:size={18} /> Optimized Route
+                            </button>
+                            <button
+                                onClick={() => setViewMode('list')}
+                                className={`flex items-center gap-2 px-4 md:px-6 py-2 rounded-lg text-xs md:text-sm font-bold transition-all ${viewMode === 'list' ? 'bg-sky-500 text-white shadow-lg shadow-sky-500/30' : 'text-slate-400'}`}
+                            >
+                                <ListOrdered size={16} md:size={18} /> Flat Wise
+                            </button>
+                            <button
+                                onClick={() => setViewMode('customers')}
+                                className={`flex items-center gap-2 px-4 md:px-6 py-2 rounded-lg text-xs md:text-sm font-bold transition-all ${viewMode === 'customers' ? 'bg-sky-500 text-white shadow-lg shadow-sky-500/30' : 'text-slate-400'}`}
+                            >
+                                <Users size={16} md:size={18} /> All Users
+                            </button>
+                        </div>
                     </div>
 
                 </div>
